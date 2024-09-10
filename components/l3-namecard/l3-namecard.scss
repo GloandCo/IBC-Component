@@ -1,0 +1,38 @@
+@use '../../styles/skeleton/text' as text;
+
+.l3-namecard-wrap {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  .image-wrap {
+	width: 125px;
+	height: 100px;
+	img	{
+	  display: block;
+	  width: 100%;
+	  height: 100%;
+	  object-fit: contain;
+	}
+  }
+  .content-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	.title-bar {
+	  @include text.title1;
+	  color: var(--white);
+	  background: var(--red);
+	  padding: 4px 30px;
+	  text-transform: uppercase;
+	  overflow: hidden;
+	}
+	.jobtitle-bar {
+	  @include text.title2;
+	  background: var(--black);
+	  color: var(--white);
+	  padding: 2px 20px;
+	  flex: 1 0 auto;
+	  overflow: hidden;
+	}
+  }
+}

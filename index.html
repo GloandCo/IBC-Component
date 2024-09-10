@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/IBC_Show_logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IBC Component</title>
+  </head>
+  <body>
+
+    <div class="test_buttons">
+      <button onclick="window.update(JSON.stringify({
+            element: 'l3-namecard',
+            action: 'on',
+            props: {
+              logo: 'IBC_Show_logo.png',
+              title: 'Tom Chafer-Cook',
+              jobtitle: 'BBC Graphics & Automation'
+            }
+          }))">
+        Name Card ON
+      </button>
+
+      <button onclick="window.update(JSON.stringify({
+            element: 'l3-namecard',
+            action: 'on',
+            props: {
+              logo: 'IBC_Show_logo.png',
+              title: 'Ben',
+              jobtitle: 'BBC Graphics & Automation'
+            }
+          }))">
+        Name Card ON BEN
+      </button>
+
+    <button onclick="window.update(JSON.stringify({
+            element: 'l3-namecard',
+            action: 'off',
+          }))">
+      Name Card OFF
+    </button>
+  </div>
+
+    <div class="safe-zone-wrap">
+      <div class="safe-zone">
+
+        <l3-namecard id="l3-namecard"></l3-namecard>
+
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

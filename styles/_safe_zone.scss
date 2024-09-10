@@ -1,0 +1,53 @@
+body {
+  position: relative;
+  width: auto;;
+  height: auto;
+
+  min-width: 100vw;
+  min-height: 100vh;
+
+  background-image:
+		  linear-gradient(45deg, #303030 25%, transparent 25%),
+		  linear-gradient(-45deg, #303030 25%, transparent 25%),
+		  linear-gradient(45deg, transparent 75%, #303030 75%),
+		  linear-gradient(-45deg, transparent 75%, #303030 75%);
+  background-size: 9.6rem 9.6rem;
+  background-position: 0 0, 0 4.8rem, 4.8rem -4.8rem, -4.8rem 0rem;
+  background-color: #353535;
+}
+
+.safe-zone-wrap	{
+  width: calc(100vw - (2.5vw * 2));
+  height: calc(100vh - (2.5vh * 2));
+
+  left: 2.5vw;
+  top: 2.5vh;
+
+  overflow: hidden;
+  background: transparent;
+  position: relative;
+  .safe-zone {
+	position: absolute;
+	inset: 0;
+	margin: auto;
+
+	outline: 1px dashed violet;
+
+	> * {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  display: grid;
+
+	  > * {
+		justify-self: center;
+		align-self: center;
+
+		&.bottom-left {
+		  justify-self: flex-start;
+		  align-self: flex-end;
+		}
+	  }
+	}
+  }
+}

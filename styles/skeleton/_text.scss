@@ -1,0 +1,20 @@
+@mixin title1 {
+  font-family: var(--font-family);
+  color: var(--black);
+  font-size: 82px;
+  font-weight: bold;
+  letter-spacing: -0.01em;
+}
+
+@mixin title2 {
+  font-family: var(--font-family);
+  color: var(--black);
+  font-size: 42px;
+  letter-spacing: -0.01em;
+}
+
+@mixin bodytext {
+  font-family: var(--font-family);
+  color: var(--black);
+  font-size: 16px;
+}

@@ -1,0 +1,26 @@
+@use "./skeleton/text" as text;
+
+.test_buttons {
+  position: fixed;
+  top:20px;
+  z-index: 10;
+
+  height: auto;
+  overflow: auto;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  button {
+    @include text.bodytext;
+    background: var(--white);
+    border: none;
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
