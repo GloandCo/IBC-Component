@@ -10,31 +10,37 @@ window.update = (update) => {
         return;
     }
 
+    // GET ALL DATA
     const allData = JSON.parse(update)
+    // ONLY IN DEVELOPMENT MODE
+    if(import.meta.env.DEV){
+        console.log("allData", allData)
+    }
 
-    try {
+    // CAN WE FIND THE ELEMENT?
+    const element = document.getElementById(allData.element);
+    if (!element) {
+        console.error(`Error: Element with ID '${allData.element}' not found`);
+        return;
+    }
 
-        // A SWITCH IS USED FOR FUTURE ACTIONS
-        // CURRENTLY WE'RE ONLY WORKING WITH ON
-        // OTHERWISE WE ANIMATE OFF
-        switch (allData.action) {
-            case 'on':
-                document.getElementById(allData.element).animateOn(allData.props);
-                break;
-            default:
-                document.getElementById(allData.element).animateOff()
-                break;
-        }
+    // DOES THE ELEMENT HAVE THE FUNCTION WE'RE AFTER?
+    if (typeof element.animateOn !== 'function' || typeof element.animateOff !== 'function') {
+        console.error(`Error: Element '${allData.element}' does not support animation methods`);
+        return;
+    }
 
-    } catch (error) {
-        if (error instanceof TypeError && error.message.includes('test is not a function')) {
-            console.error('Error: The test method is not available on the selected element.');
-            // You can add your custom error handling here, such as:
-            // sendErrorReport('test method not available', error);
-        } else {
-            // Handle other types of errors
-            console.error('An unexpected error occurred:', error);
-        }
+    // A SWITCH IS USED FOR FUTURE ACTIONS
+    // CURRENTLY WE'RE ONLY WORKING WITH ON
+    switch (allData.action) {
+        case 'on':
+            document.getElementById(allData.element).animateOn(allData.props);
+            break;
+        case 'off':
+            document.getElementById(allData.element).animateOff()
+            break;
+        default:
+            console.error('Error: Unknown Action', allData.action)
     }
 
 }

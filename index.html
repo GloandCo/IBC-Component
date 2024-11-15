@@ -9,15 +9,16 @@
   <body>
 
     <div class="test_buttons">
+
       <button onclick="window.update(JSON.stringify({
-            element: 'l3-namecard',
-            action: 'on',
-            props: {
-              logo: 'IBC_Show_logo.png',
-              title: 'Tom Chafer-Cook',
-              jobtitle: 'BBC Graphics & Automation'
-            }
-          }))">
+        element: 'l3-namecard',
+        action: 'on',
+        props: {
+          logo: 'IBC_Show_logo.png',
+          title: 'Tom Chafer-Cook',
+          jobtitle: 'BBC Graphics & Automation'
+        }
+      }))">
         Name Card ON
       </button>
 
@@ -33,13 +34,13 @@
         Name Card ON BEN
       </button>
 
-    <button onclick="window.update(JSON.stringify({
-            element: 'l3-namecard',
-            action: 'off',
-          }))">
-      Name Card OFF
-    </button>
-  </div>
+      <button onclick="window.update(JSON.stringify({
+              element: 'l3-namecard',
+              action: 'off',
+            }))">
+        Name Card OFF
+      </button>
+    </div>
 
     <div class="safe-zone-wrap">
       <div class="safe-zone">
